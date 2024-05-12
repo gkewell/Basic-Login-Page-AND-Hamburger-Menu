@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Log in, Sign in, Username, Password, Create account, Authentication">
+    <meta name="description" content="Web Site Login Pages | Gökçe Ahmet">
+    <title>Web Site Login Pages | Gökçe Ahmet</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="code.js"></script>
+</head>
+<body>
+
+    <!-- MOBILE SCREEN -->
+    <input style="display: none; "  type="checkbox" id="menu">
+    <!-- END MOBILE SCREEN -->
+    <header>
+        <div >
+            <h1 style="color: white;">Hurşut Pekyorgun</h1>
+        </div>
+        <!-- MOBILE SCREEN -->
+        <label for="menu">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <!-- END MOBILE SCREEN -->
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <li>
+                <a href="#" class="btn-login">Login</a>
+            </li>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <!-- Giriş formu -->
+        <form action="">
+            <h1>Login</h1>
+            <!-- Kullanıcı adı ve şifre girişi -->
+            <div class="input-box">
+                <input type="text" id="userName" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="password" placeholder="Password" required>
+                <i class='bx bxs-lock-alt'></i>
+            </div>
+            <!-- "Beni Hatırla" seçeneği ve şifremi unuttum bağlantısı -->
+            <div class="remember-forgot">
+                <label><input type="checkbox">Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <!-- Giriş butonu -->
+            <button type="submit" class="btn" onclick="girisKontrolu(document.getElementById('userName').value, document.getElementById('password').value)">Login</button>
+            <!-- Kayıt ol bağlantısı -->
+            <div class="register-link">
+                <p>Don't have an account? <a href="#">Register</a></p>
+            </div>
+        </form>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap');
+
+* {
+    margin: 0 auto; /* Tüm öğelerin dış kenar boşluğunu ortalar */
+    padding: 0; /* Tüm öğelerin iç kenar boşluğunu sıfırlar */
+    list-style: none; /* Liste öğelerinin işaretlerini kaldırır */
+    text-decoration: none; /* Metin bağlantılarındaki alt çizgiyi kaldırır */
+    box-sizing: border-box; /* Kutunun içeriğini, kenarlığını ve dolgusunu, toplam genişlik ve yüksekliği hesaplar */
+    font-family: "Google Sans Regular"; /* Metin fontunu belirler */
+    scroll-behavior: smooth; /* Sayfada yumuşak kaydırma efekti sağlar */
+}
+
+body {
+    display: flex; /* İçeriği yatay hizalar */
+    justify-content: center; /* İçeriği yatay eksende ortalar */
+    align-items: center; /* İçeriği dikey eksende ortalar */
+    min-height: 100vh; /* Minimum yükseklik belirler, tam pencere yüksekliği kadar genişler */
+    background: url("background.jpg") no-repeat; /* Arka plan resmi ekler ve tekrar etmesini engeller */
+    background-size: cover; /* Arka plan resminin ekran boyutuna uygun şekilde ölçeklenmesini sağlar */
+    background-position: center; /* Arka plan resminin ortalanmasını sağlar */
+}
+
+header {
+    position: fixed; /* Sayfa kaydırıldığında sabit durmasını sağlar */
+    top: 0; /* Sayfanın üst kısmına yaslanır */
+    left: 0; /* Sayfanın sol kısmına yaslanır */
+    width: 100%; /* Tam genişlik alır */
+    height: 80px; /* Yükseklik belirler */
+    display: flex; /* İçeriği yatay hizalar */
+    align-items: center; /* İçeriği dikey eksende ortalar */
+    justify-content: space-between; /* Öğeler arasında boşluk bırakır */
+    padding: 0 100px; /* Sol ve sağ kenar boşluğunu belirler */
+    
+}
+
+nav {
+    display: flex;
+    
+    
+    
+}
+nav a {
+    position: relative; /* Göreceli konumlandırma sağlar */
+    border-radius: 50px; /* Kenar yuvarlanmasını sağlar */
+    display: block; /* Blok öğe olarak görüntüler */
+    font-size: 1.8em; /* Yazı tipi boyutu */
+    color: #fff; /* Metin rengi */
+    text-decoration: none; /* Metin bağlantılarının alt çizgisini kaldırır */
+    font-weight: 500; /* Metnin kalınlığını belirler */
+    margin-left: 20px; /* Sol kenar boşluğunu belirler */
+    padding: 0.5em; /* Dolgu miktarını belirler */
+    transition: 0.2s; /* Geçiş efekti süresini belirler */
+}
+nav .btn-login {
+    color: #333; /* Metin rengi */
+    background: #fff; /* Arkaplan rengi */
+}
+
+nav .btn-login {
+    background: #fff; /* Arkaplan rengi */
+    color: #162938; /* Metin rengi */
+}
+
+nav a::after {
+    content: ''; /* Ek içerik ekler */
+    position: absolute; /* Mutlak konumlandırma sağlar */
+    left: 0; /* Sol kenara yaslanır */
+    bottom: -6px; /* Alt kenara yakın konumlandırılır */
+    width: 100%; /* Tam genişlik alır */
+    height: 3px; /* Yükseklik belirler */
+    background: #fff; /* Arkaplan rengi */
+    border-radius: 5px; /* Kenar yuvarlanmasını sağlar */
+    transform-origin: right; /* Dönüşün kaynağını belirler */
+    transform: scaleX(0); /* Ölçeklendirme işlemi uygular */
+    transition: transform .5s; /* Geçiş efekti süresini belirler */
+}
+
+nav a:hover::after {
+    transform: scaleX(1); /* Ölçeklendirme işlemi uygular */
+    transform-origin: left; /* Dönüşün kaynağını belirler */
+}
+
+@media (max-width: 768px) {
+    
+    .wrapper{
+        display: none;
+    }
+    
+    nav {
+        
+        
+        position: absolute;
+        top: 100px;
+        backdrop-filter: blur(1px);
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        height: 0;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+    nav a:nth-child(1) {
+        margin-top: 50px;
+    }
+
+    label {
+        width: 45px;
+        height: 20px;
+        position: relative;
+    }
+    label div {
+        width: 70%;
+        height: 3px;
+        background: #ffffff;
+        position: absolute;
+        transform: translateY(-50%);
+        border-radius: 99px;
+        transition: 0.3s;
+        transform: scale(1);
+    }
+    label div:nth-child(1) {
+        top: 0;
+    }
+    label div:nth-child(2) {
+        top: 50%;
+    }
+    label div:nth-child(3) {
+        top: 100%;
+    }
+
+    input:checked + header nav {
+        height: 100vh;
+        
+    }
+    
+    input:checked + header label div:nth-child(1) {
+        transform: rotate(45deg);
+        top: 50%;
+    }
+    input:checked + header label div:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 50%;
+    }
+    input:checked + header label div:nth-child(2) {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.wrapper {
+    
+    width: 420px; /* Genişlik */
+    background: transparent; /* Arkaplan rengi */
+    border: 2px solid rgba(255,255,255, .2); /* Kenar rengi ve kalınlığını belirler */
+    backdrop-filter: blur(8px); /* Arkaplanı bulanıklaştırır */
+    box-shadow: 0 0 10px rgba(0,0,0, .2); /* Kutuya gölge ekler */
+    color: #fff; /* Metin rengi */
+    border-radius: 10px; /* Kenar yuvarlanmasını sağlar */
+    padding: 30px 40px; /* Dolgu miktarını belirler */
+}
+
+.wrapper h1 {
+    font-size: 36px; /* Yazı tipi boyutu */
+    text-align: center; /* Metni ortalar */
+}
+
+.wrapper .input-box{
+    position: relative; /* Göreceli konumlandırma sağlar */
+    width: 100%; /* Tam genişlik alır */
+    height: 50px; /* Yükseklik belirler */
+    margin: 30px 0; /* Kenar boşluğunu belirler */
+}
+
+.input-box input{
+    width: 100%; /* Tam genişlik alır */
+    height: 100%; /* Tam yükseklik alır */
+    background: transparent; /* Arkaplan rengi */
+    border: none; /* Kenar çizgisini kaldırır */
+    outline: none; /* Odaklanma efektini kaldırır */
+    border: 2px solid rgba(255,255,255, .2); /* Kenar rengi ve kalınlığını belirler */
+    border-radius: 40px; /* Kenar yuvarlanmasını sağlar */
+    font-size: 16px; /* Yazı tipi boyutu */
+    color: #fff; /* Metin rengi */
+    padding: 20px 45px 20px 20px; /* Dolgu miktarını belirler */
+}
+
+.input-box input::placeholder{
+    color: #fff; /* Metin rengi */
+}
+
+.input-box i{
+    position: absolute; /* Mutlak konumlandırma sağlar */
+    right: 20px; /* Sağ kenara yakın konumlandırılır */
+    top: 50%; /* Yatay eksende ortalar */
+    transform: translateY(-50%); /* Dikey eksende ortalar */
+    font-size: 20px; /* Yazı tipi boyutu */
+}
+
+.wrapper .remember-forgot {
+    display: flex; /* İçeriği yatay hizalar */
+    justify-content: space-between; /* Öğeler arasında boşluk bırakır */
+    font-size: 14.5px; /* Yazı tipi boyutu */
+    margin: -15px 0 15px; /* Kenar boşluğunu belirler */
+}
+
+.remember-forgot label input{
+    accent-color: #fff; /* Betik içeriği rengi */
+    margin-right: 3px; /* Sağ kenar boşluğunu belirler */
+}
+
+.remember-forgot a {
+    color: #fff; /* Metin rengi */
+    text-decoration: none; /* Metin bağlantılarındaki alt çizgiyi kaldırır */
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline; /* Metin bağlantısının altını çizer */
+}
+
+.wrapper .btn {
+    width: 100%; /* Tam genişlik alır */
+    height: 45px; /* Yükseklik belirler */
+    background: #fff; /* Arkaplan rengi */
+    border: none; /* Kenar çizgisini kaldırır */
+    outline: none; /* Odaklanma efektini kaldırır */
+    border-radius: 40px; /* Kenar yuvarlanmasını sağlar */
+    box-shadow: 0 0 10px rgba(0,0,0, .1); /* Kutuya gölge ekler */
+    cursor: pointer; /* Fare işaretçisini değiştirir */
+    font-size: 16px; /* Yazı tipi boyutu */
+    color: #333; /* Metin rengi */
+    font-weight: 600; /* Metnin kalınlığını belirler */
+}
+
+.wrapper .register-link {
+    font-size: 14.5px; /* Yazı tipi boyutu */
+    text-align: center; /* Metni ortalar */
+    margin: 20px 0 15px; /* Kenar boşluğunu belirler */
+}
+
+.register-link p a {
+    color: #fff; /* Metin rengi */
+    text-decoration: none; /* Metin bağlantılarındaki alt çizgiyi kaldırır */
+    font-weight: 600; /* Metnin kalınlığını belirler */
+}
+
+.register-link p a:hover {
+    text-decoration: underline; /* Metin bağlantısının altını çizer */
+}
+
+
+
+
+
+
+
+
